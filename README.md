@@ -5,3 +5,10 @@
 
 ## 과제 제출 과정
 * [과제 제출 방법](https://github.com/next-step/nextstep-docs/tree/master/precourse)
+
+## 기능
+* 각 자동차에 이름 부여
+* 몇번 이동할건지 입력
+* 입력받은 횟수만큼 자동차 이동
+* 자동차 이동현황 보기
+* 우승자 판단
