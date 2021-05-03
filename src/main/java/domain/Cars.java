@@ -38,10 +38,12 @@ public class Cars {
 		cars.add(car);
 	}
 
-	public void race() {
+	public void printBoard() {
 		for (Car car : cars) {
 			final int randomNumber = random.nextInt(UPPER_BOUND);
 			car.go(randomNumber);
+			car.printPath();
 		}
+		System.out.println("\n");
 	}
 }

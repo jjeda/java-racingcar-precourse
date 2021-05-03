@@ -37,4 +37,14 @@ public class Car {
 			position.plus();
 		}
 	}
+
+	public void printPath() {
+		System.out.print(name.toString() + " : ");
+
+		int currentPosition = position.toInt();
+		while (currentPosition-- > 0) {
+			System.out.print("-");
+		}
+		System.out.println();
+	}
 }

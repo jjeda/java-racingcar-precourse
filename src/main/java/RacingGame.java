@@ -26,7 +26,7 @@ public class RacingGame {
 		System.out.println("실행 결과");
 
 		while (tryCount-- > 0) {
-			cars.race();
+			cars.printBoard();
 		}
 	}
 
