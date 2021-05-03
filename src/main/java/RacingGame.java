@@ -1,6 +1,8 @@
 import java.util.Scanner;
 
+import domain.Car;
 import domain.Cars;
+import wrapper.CarName;
 import wrapper.CarNames;
 
 public class RacingGame {
@@ -16,7 +18,11 @@ public class RacingGame {
 
 	private Cars readyGame() {
 		final CarNames carNames = CarNames.inputOf(scanner);
-		return Cars.readyOf(carNames);
+		final Cars cars = Cars.of();
+		for (CarName carName : carNames.get()) {
+			cars.addCar(Car.of(carName));
+		}
+		return cars;
 	}
 
 	private void progressRacing(Cars cars) {
@@ -30,11 +36,19 @@ public class RacingGame {
 		}
 	}
 
+	private void finishGame(Cars cars) {
+		final Cars winners = cars.getWinners();
+		final CarNames winnerCarNames = winners.toCarNames();
+		System.out.println(winnerCarNames.toString());
+	}
+
 	public static void main(String[] args) {
 		final RacingGame racingGame = RacingGame.of();
 
 		final Cars cars = racingGame.readyGame();
 
 		racingGame.progressRacing(cars);
+
+		racingGame.finishGame(cars);
 	}
 }

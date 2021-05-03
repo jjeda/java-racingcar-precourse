@@ -36,4 +36,16 @@ public class CarNames {
 	public List<CarName> get() {
 		return names;
 	}
+
+	@Override
+	public String toString() {
+		List<String> strings = new LinkedList<>();
+
+		for (CarName carName : names) {
+			strings.add(carName.toString());
+		}
+
+		String[] toStringArray = strings.toArray(new String[0]);
+		return String.join(",", toStringArray) + "가 최종 우승했습니다.";
+	}
 }
